@@ -9,7 +9,8 @@ require.config({
     'angular-mocks': '../bower_components/angular-mocks/angular-mocks',
     'angular-cookies': '../bower_components/angular-cookies/angular-cookies',
     angular: '../bower_components/angular/angular',
-    foundation: '../bower_components/foundation/js/foundation'
+    foundation: '../bower_components/foundation/js/foundation',
+    'angular-foundation': '../bower_components/angular-foundation/mm-foundation-tpls'
   },
   shim: {
     angular: {
@@ -32,7 +33,13 @@ require.config({
         'angular'
       ],
       exports: 'angular.mock'
-    }
+    },
+    foundation: [
+      'jquery'
+    ],
+    'angular-foundation': [
+      'foundation'
+    ]
   },
   priority: [
     'angular'

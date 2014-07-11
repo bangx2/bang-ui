@@ -21,7 +21,9 @@ requirejs.config({
     'angular-mocks': '../bower_components/angular-mocks/angular-mocks',
     'angular-cookies': '../bower_components/angular-cookies/angular-cookies',
     angular: '../bower_components/angular/angular',
-    foundation: '../bower_components/foundation/js/foundation'
+    foundation: '../bower_components/foundation/js/foundation',
+    'foundation.offcanvas': '../bower_components/foundation/js/foundation/foundation.offcanvas',
+    'angular-foundation': '../bower_components/angular-foundation/mm-foundation-tpls'
   },
 
     shim: {
