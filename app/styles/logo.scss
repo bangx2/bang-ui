@@ -1,0 +1,58 @@
+$logo-size: 100px;
+
+$golden-ratio: 0.618;
+
+$default-bg: blue;
+$default-color: black;
+
+
+.logo-bg {
+  width: $logo-size;
+  height: $logo-size;
+  background-color: $default-bg;
+  position: relative;
+  //border-radius: 9px;
+}
+
+$big-triangle-width: $logo-size*$golden-ratio;
+$small-triangle-width: $big-triangle-width*$golden-ratio;
+
+.big-triangle-up {
+  width: 0;
+  height: 0;
+  border-top: $big-triangle-width*0.5 solid transparent;
+  border-bottom: $big-triangle-width*0.5 solid transparent;
+  border-left: $big-triangle-width solid $default-color;
+  position: relative;
+}
+
+.small-triangle-up {
+  width: 0;
+  height: 0;
+  border-top: $small-triangle-width*0.5 solid transparent;
+  border-bottom: $small-triangle-width*0.5 solid transparent;
+  border-left: $small-triangle-width solid yellow;
+  position: relative;
+  top: -$small-triangle-width*0.5; 
+}
+
+
+.big-triangle-down {
+  width: 0;
+  height: 0;
+  border-top: $big-triangle-width*0.5 solid transparent;
+  border-bottom: $big-triangle-width*0.5 solid transparent;
+  border-left: $big-triangle-width solid $default-color;
+  position: absolute;
+  bottom: 0;
+}
+
+.small-triangle-down {
+  width: 0;
+  height: 0;
+  border-top: $small-triangle-width*0.5 solid transparent;
+  border-bottom: $small-triangle-width*0.5 solid transparent;
+  border-left: $small-triangle-width solid yellow;
+  position: relative;
+  top: -$small-triangle-width*0.5; 
+}
