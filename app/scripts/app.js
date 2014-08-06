@@ -1,8 +1,8 @@
 /*jshint unused: vars */
-define(['angular', 'controllers/main', 'angular-foundation']/*deps*/, function (angular, MainCtrl)/*invoke*/ {
+define(['angular', 'controllers/main']/*deps*/, function (angular, MainCtrl)/*invoke*/ {
   'use strict';
 
-  return angular.module('bangUiApp', ['bangUiApp.controllers.MainCtrl', 'mm.foundation',
+  return angular.module('bangUiApp', ['bangUiApp.controllers.MainCtrl',
 /*angJSDeps*/
   'ngCookies',
   'ngResource',
