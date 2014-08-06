@@ -1,7 +1,7 @@
-define(['angular', 'angular-foundation'], function (angular) {
+define(['angular'], function (angular) {
   'use strict';
 
-  angular.module('bangUiApp.controllers.MainCtrl', ['mm.foundation'])
+  angular.module('bangUiApp.controllers.MainCtrl', [])
     .controller('MainCtrl', function ($scope) {
       $scope.awesomeThings = [
         'HTML5 Boilerplate',
