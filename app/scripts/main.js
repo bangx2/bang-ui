@@ -8,7 +8,9 @@ require.config({
     'angular-resource': '../bower_components/angular-resource/angular-resource',
     'angular-mocks': '../bower_components/angular-mocks/angular-mocks',
     'angular-cookies': '../bower_components/angular-cookies/angular-cookies',
-    angular: '../bower_components/angular/angular'
+    angular: '../bower_components/angular/angular',
+    'zepto': '../amui/js/zepto.min',
+    'amui': '../amui/js/amui',
   },
   shim: {
     angular: {
@@ -31,6 +33,15 @@ require.config({
         'angular'
       ],
       exports: 'angular.mock'
+    },
+    'zepto': {
+      exports: 'zepto'
+   },
+    'amui': {
+      deps: [
+        'zepto'
+      ],
+      exports: 'amui'
     }
   },
   priority: [
