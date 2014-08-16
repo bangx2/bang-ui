@@ -1,0 +1,36 @@
+@import "logo";
+
+
+/* homepage */
+
+#homepage-hero {
+  height: 400px;
+  text-align: left;
+  position: relative;
+  padding: 100px 20px 0;
+  /*background-color: #074e68;*/
+}
+
+.hero-logo {
+  width: 300px;
+  height: 300px;
+  background-color: #999;
+  position: absolute;
+  right: 100px;
+  top: 30px;
+}
+
+#homepage-main {
+  margin: 44px 0 22px;
+  padding-bottom: 22px;
+}
+
+.img-logo {
+  margin: 0 auto;
+  height: 200px;
+  width: 200px;
+  background-color: #CCCCCC;
+}
+
+
+

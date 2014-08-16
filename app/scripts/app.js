@@ -9,8 +9,12 @@ define(['angular', 'controllers/main']/*deps*/, function (angular, MainCtrl)/*in
   'ngSanitize',
   'ngRoute'
 ])
-    .config(function ($routeProvider) {
+    .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
       $routeProvider
+        .when('/login', {
+          templateUrl: 'views/login.html',
+          controller: 'MainCtrl'
+        })
         .when('/', {
           templateUrl: 'views/main.html',
           controller: 'MainCtrl'
@@ -18,5 +22,8 @@ define(['angular', 'controllers/main']/*deps*/, function (angular, MainCtrl)/*in
         .otherwise({
           redirectTo: '/'
         });
-    });
+
+      /* Removing the # symbol from urls */
+      //$locationProvider.html5Mode(true);
+    }]);
 });

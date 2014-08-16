@@ -10,7 +10,7 @@ require.config({
     'angular-cookies': '../bower_components/angular-cookies/angular-cookies',
     angular: '../bower_components/angular/angular',
     'zepto': '../amui/js/zepto.min',
-    'amui': '../amui/js/amui',
+    'amui': '../amui/js/amui'
   },
   shim: {
     angular: {
@@ -36,7 +36,7 @@ require.config({
     },
     'zepto': {
       exports: 'zepto'
-   },
+    },
     'amui': {
       deps: [
         'zepto'
@@ -58,8 +58,9 @@ require([
   'angular-route',
   'angular-cookies',
   'angular-sanitize',
-  'angular-resource'
-], function(angular, app, ngRoutes, ngCookies, ngSanitize, ngResource) {
+  'angular-resource',
+  'amui'
+], function(angular, app, ngRoutes, ngCookies, ngSanitize, ngResource, amui) {
   'use strict';
   /* jshint ignore:start */
   var $html = angular.element(document.getElementsByTagName('html')[0]);
