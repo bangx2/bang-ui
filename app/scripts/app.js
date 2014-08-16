@@ -1,29 +1,31 @@
 /*jshint unused: vars */
-define(['angular', 'controllers/main']/*deps*/, function (angular, MainCtrl)/*invoke*/ {
+define(['angular', 'controllers/main', 'amui']/*deps*/, function (angular, MainCtrl)/*invoke*/ {
   'use strict';
 
   return angular.module('bangUiApp', ['bangUiApp.controllers.MainCtrl',
 /*angJSDeps*/
   'ngCookies',
-  'ngResource',
   'ngSanitize',
-  'ngRoute'
+  //'ngRoute',
+  /* 3rd Party Modules */
+  'ui.router'
 ])
-    .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
-      $routeProvider
-        .when('/login', {
+    .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+
+      $urlRouterProvider.otherwise('/');
+      // $urlRouterProvider.when('/', '/login');
+
+      $stateProvider
+        .state('login', {
+          url: '/login',
           templateUrl: 'views/login.html',
           controller: 'MainCtrl'
         })
-        .when('/', {
+        .state('main', {
+          url: '/',
           templateUrl: 'views/main.html',
           controller: 'MainCtrl'
-        })
-        .otherwise({
-          redirectTo: '/'
         });
 
-      /* Removing the # symbol from urls */
-      //$locationProvider.html5Mode(true);
     }]);
 });

@@ -4,28 +4,26 @@ require.config({
     jquery: '../bower_components/jquery/dist/jquery',
     'angular-scenario': '../bower_components/angular-scenario/angular-scenario',
     'angular-sanitize': '../bower_components/angular-sanitize/angular-sanitize',
-    'angular-route': '../bower_components/angular-route/angular-route',
-    'angular-resource': '../bower_components/angular-resource/angular-resource',
+    //'angular-route': '../bower_components/angular-route/angular-route',
     'angular-mocks': '../bower_components/angular-mocks/angular-mocks',
     'angular-cookies': '../bower_components/angular-cookies/angular-cookies',
     angular: '../bower_components/angular/angular',
-    'zepto': '../amui/js/zepto.min',
-    'amui': '../amui/js/amui'
+    zepto: '../amui/js/zepto.min',
+    amui: '../amui/js/amui',
+    underscore: '../bower_components/underscore/underscore',
+    'angular-ui-router': '../bower_components/angular-ui-router/release/angular-ui-router'
   },
   shim: {
     angular: {
       exports: 'angular'
     },
-    'angular-route': [
-      'angular'
-    ],
+    // 'angular-route': [
+    //   'angular'
+    // ],
     'angular-cookies': [
       'angular'
     ],
     'angular-sanitize': [
-      'angular'
-    ],
-    'angular-resource': [
       'angular'
     ],
     'angular-mocks': {
@@ -34,10 +32,13 @@ require.config({
       ],
       exports: 'angular.mock'
     },
-    'zepto': {
+    'angular-ui-router': [
+      'angular'
+    ],
+    zepto: {
       exports: 'zepto'
     },
-    'amui': {
+    amui: {
       deps: [
         'zepto'
       ],
@@ -55,12 +56,12 @@ window.name = 'NG_DEFER_BOOTSTRAP!';
 require([
   'angular',
   'app',
-  'angular-route',
+  // 'angular-route',
   'angular-cookies',
   'angular-sanitize',
-  'angular-resource',
-  'amui'
-], function(angular, app, ngRoutes, ngCookies, ngSanitize, ngResource, amui) {
+  'angular-ui-router',
+  'underscore'
+], function(angular, app) {
   'use strict';
   /* jshint ignore:start */
   var $html = angular.element(document.getElementsByTagName('html')[0]);
