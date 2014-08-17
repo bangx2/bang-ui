@@ -10,6 +10,30 @@ define(['angular', 'controllers/main', 'amui']/*deps*/, function (angular, MainC
   /* 3rd Party Modules */
   'ui.router'
 ])
+
+    .factory('authInterceptor', function ($q, $cookies, $location) {
+      return {
+        request: function (config) {
+          config.headers = config.headers || {};
+          if ($cookies.token) {
+            config.headers.Authorization = 'Token ' + $cookies.token;
+          }
+          return config;
+        },
+        responseError: function (response) {
+          if (response.status == 401) {
+            $location.path('/login');
+          }
+          return $q.reject(response);
+        }
+      };
+    })
+
+    .config(function ($httpProvider) {
+      $httpProvider.interceptors.push('authInterceptor');
+      //$httpProvider.defaults.withCredentials = true;
+    })
+
     .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
 
       $urlRouterProvider.otherwise('/');
@@ -19,7 +43,7 @@ define(['angular', 'controllers/main', 'amui']/*deps*/, function (angular, MainC
         .state('login', {
           url: '/login',
           templateUrl: 'views/login.html',
-          controller: 'MainCtrl'
+          controller: 'LoginCtrl'
         })
         .state('main', {
           url: '/',

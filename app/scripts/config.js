@@ -1,0 +1,9 @@
+define(function () {
+
+  var api_url = 'http://127.0.0.1:8000';
+
+  return {
+    api_url: api_url
+  }
+
+});

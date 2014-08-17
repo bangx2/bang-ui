@@ -1,18 +1,18 @@
-<div class="am-g">
+<div class="am-g" ng-controller="LoginCtrl">
   <div class="col-lg-6 col-md-8 col-sm-centered">
     <br>
     <h3>bang<span class="am-text-warning">x2</span>.com</h3>
     <hr>
     <form ng-submit="login()" class="am-form">
-      <label for="email">邮箱:</label>
-      <input type="email" name="" id="email" value="" required/>
+      <label for="username">邮箱:</label>
+      <input ng-model="user.username" type="email" name="username" id="username" required/>
       <br>
       <label for="password">密码:</label>
-      <input type="password" name="" id="password" value="">
+      <input ng-model="user.password" type="password" name="password" id="password" required>
       <br>
       <label for="remember-me">
         <input id="remember-me" type="checkbox">
-        记住密码
+        保持登陆
       </label>
       <br />
       <div class="am-cf">
