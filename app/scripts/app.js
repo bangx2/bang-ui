@@ -1,9 +1,13 @@
 /*jshint unused: vars */
-define(['angular', 'controllers/main', 'controllers/bang/panel']/*deps*/, function (angular, MainCtrl, BangPanelCtrl)/*invoke*/ {
+define(['angular', 'controllers/main', 'controllers/bang/panel', 'controllers/nav', 'controllers/header', 'controllers/bang/home', 'controllers/member/main']/*deps*/, function (angular, MainCtrl, BangPanelCtrl, NavCtrl, HeaderCtrl, BangHomeCtrl, MemberMainCtrl)/*invoke*/ {
   'use strict';
 
   return angular.module('bangUiApp', ['bangUiApp.controllers.MainCtrl',
 'bangUiApp.controllers.BangPanelCtrl',
+'bangUiApp.controllers.NavCtrl',
+'bangUiApp.controllers.HeaderCtrl',
+'bangUiApp.controllers.BangHomeCtrl',
+'bangUiApp.controllers.MemberMainCtrl',
 /*angJSDeps*/
   'ngCookies',
   'ngSanitize',
@@ -41,10 +45,15 @@ define(['angular', 'controllers/main', 'controllers/bang/panel']/*deps*/, functi
       // $urlRouterProvider.when('/', '/login');
 
       $stateProvider
-        .state('main', {
+        .state('bang', {
           url: '/',
-          templateUrl: 'views/main.html',
-          controller: 'MainCtrl'
+          templateUrl: 'views/bang/home.html',
+          controller: 'BangHomeCtrl'
+        })
+        .state('member', {
+          url: '/member/main',
+          templateUrl: 'views/member/main.html',
+          controller: 'MemberMainCtrl'
         })
         .state('index', {
           url: '/index',

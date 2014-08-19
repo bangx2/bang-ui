@@ -23,13 +23,30 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="bangUiApp" class="head-fixed">
+  <body class="" ng-controller="MainCtrl">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <!-- Add your site or application content here -->
-    <div class="container" ui-view></div>
+    <div class="container head-fixed" data-ng-hide="isSpecificPage()" data-ng-cloak>
+      <header ng-include="'views/header.html'" ng-controller="HeaderCtrl">
+      </header>
+
+      <aside id='navigation' ng-include="'views/nav.html'" ng-controller="NavCtrl">
+      </aside>
+
+      <!-- Add your site or application content here -->
+      <section id='content' ui-view>
+      </section>
+
+      <section ng-include="'views/bang/panel.html'" ng-controller="BangPanelCtrl">
+      </section>
+    </div>
+
+    <div class="" data-ng-show="isSpecificPage()" data-ng-cloak>
+      <section ui-view>
+      </section>
+    </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <!--

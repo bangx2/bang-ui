@@ -3,7 +3,11 @@ define(['config', 'angular'], function (config, angular) {
 
   angular.module('bangUiApp.controllers.MainCtrl', [])
 
-    .controller('MainCtrl', ['$scope', '$http', function ($scope, $http) {
+    .controller('MainCtrl', ['$scope', '$http', '$location', function ($scope, $http, $location) {
+      $scope.isSpecificPage = function(){
+          var path = $location.path();
+          return _.contains(['/login', '/index'], path);
+      };
       $http({url: config.api_url + '/bang/bang-detail/1/', method: 'GET'})
       .success(function (data, status, headers, config) {
         console.log(data.name); // Should log 'foo'
@@ -25,7 +29,7 @@ define(['config', 'angular'], function (config, angular) {
           .success(function (data, status, headers, config) {
             $cookies.token = data.token;
             $scope.message = 'Welcome';
-            $state.go('main');
+            $state.go('bang');
           })
           .error(function (data, status, headers, config) {
             // Erase the token if the user fails to log in
