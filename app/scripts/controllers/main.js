@@ -2,12 +2,21 @@ define(['config', 'angular'], function (config, angular) {
   'use strict';
 
   angular.module('bangUiApp.controllers.MainCtrl', [])
-    .controller('MainCtrl', function ($scope, $http) {
+
+    .controller('MainCtrl', ['$scope', '$http', function ($scope, $http) {
       $http({url: config.api_url + '/bang/bang-detail/1/', method: 'GET'})
       .success(function (data, status, headers, config) {
         console.log(data.name); // Should log 'foo'
       });
-    })
+    }])
+
+    .controller('IndexCtrl', ['$scope', '$http', function ($scope, $http) {
+      $http({url: config.api_url + '/bang/bang-detail/1/', method: 'GET'})
+      .success(function (data, status, headers, config) {
+        console.log(data.name); // Should log 'foo'
+      });
+    }])
+
     .controller('LoginCtrl', ['$scope', '$http', '$cookies', '$state', function ($scope, $http, $cookies, $state) {
       // $scope.user = {};
       $scope.login = function () {

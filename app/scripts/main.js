@@ -56,6 +56,7 @@ window.name = 'NG_DEFER_BOOTSTRAP!';
 require([
   'angular',
   'app',
+  'amui',
   // 'angular-route',
   'angular-cookies',
   'angular-sanitize',

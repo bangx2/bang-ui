@@ -1,8 +1,9 @@
 /*jshint unused: vars */
-define(['angular', 'controllers/main', 'amui']/*deps*/, function (angular, MainCtrl)/*invoke*/ {
+define(['angular', 'controllers/main', 'controllers/bang/panel']/*deps*/, function (angular, MainCtrl, BangPanelCtrl)/*invoke*/ {
   'use strict';
 
   return angular.module('bangUiApp', ['bangUiApp.controllers.MainCtrl',
+'bangUiApp.controllers.BangPanelCtrl',
 /*angJSDeps*/
   'ngCookies',
   'ngSanitize',
@@ -11,7 +12,7 @@ define(['angular', 'controllers/main', 'amui']/*deps*/, function (angular, MainC
   'ui.router'
 ])
 
-    .factory('authInterceptor', function ($q, $cookies, $location) {
+    .factory('authInterceptor', ['$q', '$cookies', '$location', function ($q, $cookies, $location) {
       return {
         request: function (config) {
           config.headers = config.headers || {};
@@ -27,28 +28,33 @@ define(['angular', 'controllers/main', 'amui']/*deps*/, function (angular, MainC
           return $q.reject(response);
         }
       };
-    })
+    }])
 
-    .config(function ($httpProvider) {
+    .config(['$httpProvider', function ($httpProvider) {
       $httpProvider.interceptors.push('authInterceptor');
       //$httpProvider.defaults.withCredentials = true;
-    })
+    }])
 
     .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
 
-      $urlRouterProvider.otherwise('/');
+      $urlRouterProvider.otherwise('/index');
       // $urlRouterProvider.when('/', '/login');
 
       $stateProvider
-        .state('login', {
-          url: '/login',
-          templateUrl: 'views/login.html',
-          controller: 'LoginCtrl'
-        })
         .state('main', {
           url: '/',
           templateUrl: 'views/main.html',
           controller: 'MainCtrl'
+        })
+        .state('index', {
+          url: '/index',
+          templateUrl: 'views/index.html',
+          controller: 'IndexCtrl'
+        })
+        .state('login', {
+          url: '/login',
+          templateUrl: 'views/login.html',
+          controller: 'LoginCtrl'
         });
 
     }]);
