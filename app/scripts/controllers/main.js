@@ -8,18 +8,20 @@ define(['config', 'angular'], function (config, angular) {
           var path = $location.path();
           return _.contains(['/login', '/index'], path);
       };
-      $http({url: config.api_url + '/bang/bang-detail/1/', method: 'GET'})
-      .success(function (data, status, headers, config) {
-        console.log(data.name); // Should log 'foo'
+      
+      $scope.$on('SelectedBang', function (event, msg) {
+        $scope.current_bang = msg;
+        $scope.$broadcast('CurrentBang', msg);
       });
     }])
 
+
     .controller('IndexCtrl', ['$scope', '$http', function ($scope, $http) {
-      $http({url: config.api_url + '/bang/bang-detail/1/', method: 'GET'})
+      $http({url: config.api_url + '/bang/my-bangs/', method: 'GET'})
       .success(function (data, status, headers, config) {
-        console.log(data.name); // Should log 'foo'
       });
     }])
+
 
     .controller('LoginCtrl', ['$scope', '$http', '$cookies', '$state', function ($scope, $http, $cookies, $state) {
       // $scope.user = {};

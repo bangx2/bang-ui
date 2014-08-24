@@ -1,1 +1,16 @@
-<p>This is the member/main view.</p>
+<article class="module-description am-hide-sm-down">
+  <h2>成员</h2>
+  <p>AllMobilize Inc (美通云动科技有限公司) 由前微软美国总部IE浏览器核心研发团队成员及移动互联网行业专家在美国西雅图创立，旨在解决网页在不同移动设备屏幕上的适配问题。</p>
+</article>
+
+<div class="am-g">
+  <div class="col-lg-12">
+    <h2 class="about-title about-color">{{current_bang.name}}</h2>
+    <div class="am-g">
+      <div class="col-lg-6 col-md-4 col-sm-12">
+        <p ng-repeat="member in members">
+          {{member.username}} - {{member.email}} - {{member.alias}}
+        </p>
+    </div>
+  </div>
+</div>

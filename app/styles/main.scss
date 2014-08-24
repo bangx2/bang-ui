@@ -1,97 +1,6 @@
-/* homepage */
-
-.head-fixed {
-  padding-top: 50px;
-}
-.head {
-  margin-bottom: 0;
-  width: 100%;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-}
-.get {
-  background: #1E5B94;
-  color: #fff;
-  text-align: center;
-  padding: 100px 0;
-}
-
-.get-title {
-  font-size: 200%;
-  border: 2px solid #fff;
-  padding: 20px;
-  display: inline-block;
-}
-.get-btn {
-  background: #fff;
-}
-.detail {
-  background: #fff;
-}
-
-.detail-h2 {
-  text-align: center;
-  font-size: 150%;
-  margin: 40px 0;
-}
-
-.detail-h3 {
-  color: #1f8dd6;
-}
-
-.detail-p {
-  color: #7f8c8d;
-}
-
-.detail-mb {
-  margin-bottom: 30px;
-}
-
-.hope {
-  background: #0bb59b;
-  padding: 50px 0;
-}
-
-.hope-img {
-  text-align: center;
-}
-
-.hope-hr {
-  border-color: #149C88;
-}
-
-.hope-title {
-  font-size: 140%;
-}
-
-.about {
-  background: #fff;
-  padding: 40px 0;
-  color: #7f8c8d;
-}
-
-.about-color {
-  color: #34495e;
-}
-
-.about-title {
-  font-size: 180%;
-  padding: 30px 0 50px 0;
-  text-align: center;
-}
-
-.footer p {
-  color: #7f8c8d;
-  margin: 0;
-  padding: 15px 0;
-  text-align: center;
-  background: #2d3e50;
-}
+@import "index";
 
 /* variable */
-
 $golden-ratio: 0.618;
 $logo-size: 120px;
 $logo-width: $logo-size;
@@ -100,8 +9,8 @@ $logo-height: $logo-size*$golden-ratio;
 $navigation-width: 140px;
 $bang-panel-width: 140px;
 
-/* container */
 
+/* container */
 html {
   height: 100%;
   overflow: hidden;
@@ -128,7 +37,7 @@ body {
   height: 100%;
   overflow-y: auto;
   position: absolute;
-  border-right: 4px solid #15afef;
+  border-right: 4px solid #eee;
   background: #fff;
 
   .bang-logo {
@@ -137,7 +46,18 @@ body {
     margin: 30px auto;
     border: 2px solid #0b76ac;
     border-radius: 5px;
+    position: relative;
+    cursor: pointer;
+    span.bang-logo-title {
+      font-size: 24px;
+      color: #333;
+      position: absolute;
+      top: 20px;
+    }
     img {
+    }
+    i {
+      text-align: center;
     }
   }
 
@@ -179,14 +99,42 @@ body {
   width: $bang-panel-width;
   background: #0b76ac;
 }
+#bang-panel .am-offcanvas-bar .am-offcanvas-content{
+  padding: 0;
+}
 #bang-panel .am-offcanvas-bar:after {
   box-shadow: 0 0 0 0;
   background: #fff;
   background: #0b76ac;
 }
 
-/* main-content */
+.bang-panel-logo {
+    width: $logo-width;
+    height: $logo-height;
+    margin: 30px auto;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    background: #fff;
+    position: relative;
+    cursor: pointer;
+    span.bang-logo-title {
+      font-size: 24px;
+      color: #333;
+      position: absolute;
+      top: 20px;
+    }
+    img {
+    }
+}
 
+.bang-new-btn {
+    width: $logo-width;
+    height: $logo-height/2;
+    margin: 30px auto;
+}
+
+
+/* main-content */
 #content {
   overflow-y: auto;
   height: 100%;

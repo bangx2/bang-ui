@@ -1,5 +1,5 @@
 /*jshint unused: vars */
-define(['angular', 'controllers/main', 'controllers/bang/panel', 'controllers/nav', 'controllers/header', 'controllers/bang/home', 'controllers/member/main']/*deps*/, function (angular, MainCtrl, BangPanelCtrl, NavCtrl, HeaderCtrl, BangHomeCtrl, MemberMainCtrl)/*invoke*/ {
+define(['angular', 'controllers/main', 'controllers/bang/panel', 'controllers/nav', 'controllers/header', 'controllers/bang/home', 'controllers/member/main', 'controllers/survey/main', 'controllers/activity/main']/*deps*/, function (angular, MainCtrl, BangPanelCtrl, NavCtrl, HeaderCtrl, BangHomeCtrl, MemberMainCtrl, SurveyMainCtrl, ActivityMainCtrl)/*invoke*/ {
   'use strict';
 
   return angular.module('bangUiApp', ['bangUiApp.controllers.MainCtrl',
@@ -8,6 +8,8 @@ define(['angular', 'controllers/main', 'controllers/bang/panel', 'controllers/na
 'bangUiApp.controllers.HeaderCtrl',
 'bangUiApp.controllers.BangHomeCtrl',
 'bangUiApp.controllers.MemberMainCtrl',
+'bangUiApp.controllers.SurveyMainCtrl',
+'bangUiApp.controllers.ActivityMainCtrl',
 /*angJSDeps*/
   'ngCookies',
   'ngSanitize',
@@ -46,14 +48,24 @@ define(['angular', 'controllers/main', 'controllers/bang/panel', 'controllers/na
 
       $stateProvider
         .state('bang', {
-          url: '/',
+          url: '/bang',
           templateUrl: 'views/bang/home.html',
           controller: 'BangHomeCtrl'
         })
         .state('member', {
-          url: '/member/main',
+          url: '/member',
           templateUrl: 'views/member/main.html',
           controller: 'MemberMainCtrl'
+        })
+        .state('survey', {
+          url: '/survey',
+          templateUrl: 'views/survey/main.html',
+          controller: 'SurveyMainCtrl'
+        })
+        .state('activity', {
+          url: '/activity',
+          templateUrl: 'views/activity/main.html',
+          controller: 'ActivityMainCtrl'
         })
         .state('index', {
           url: '/index',

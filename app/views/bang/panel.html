@@ -2,15 +2,43 @@
 <div id="bang-panel" class="am-offcanvas">
   <div class="am-offcanvas-bar">
     <div class="am-offcanvas-content">
-      <p>
-      在一起，为了共同的理想
-      </p>
-      <p>
-      工作亦是生活
-      </p>
-      <p>
-      何不去发现它的美
-      </p>
+      <div class="bang-panel-logo" ng-repeat="bang in bangs" ng-click="select_bang(bang)">
+        <!--
+        <img src="http://amazeui.org/i/landing/mascot.png" alt="{{bang.name}}" class="am-img-bdrs">
+        -->
+        <span class="bang-logo-title">{{bang.name}}</span>
+      </div>
+      <div class="bang-new-btn">
+        <button class="am-btn am-btn-primary am-btn-block" data-am-modal="{target: '#create-bang-modal'}"><i class="am-icon-plus"></i></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 创建邦 -->
+<div class="am-popup" id="create-bang-modal">
+  <div class="am-popup-inner">
+    <div class="am-popup-hd">
+      <h4 class="am-popup-title">创建新的邦</h4>
+      <span data-am-modal-close
+            class="am-close">&times;</span>
+    </div>
+    <div class="am-popup-bd">
+      <form ng-submit="create()" class="am-form">
+        <label for="name">邦名称</label>
+        <input ng-model="bang.name" type="text" name="name" id="name" required/>
+        <br>
+        <label for="bang.can_invite">
+          <input id="can_invite" type="checkbox">
+          邦内成员都可以邀请其他人
+        </label>
+        <br />
+        <div class="">
+          <input type="submit" name="" value="创建" class="am-btn am-btn-primary am-btn-sm am-btn-block"></input>
+        </div>
+      </form>
+      {{message}}
+      {{bang.name}}
     </div>
   </div>
 </div>
