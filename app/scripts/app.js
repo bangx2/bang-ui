@@ -1,5 +1,5 @@
 /*jshint unused: vars */
-define(['angular', 'controllers/main', 'controllers/bang/panel', 'controllers/nav', 'controllers/header', 'controllers/bang/home', 'controllers/member/main', 'controllers/survey/main', 'controllers/activity/main']/*deps*/, function (angular, MainCtrl, BangPanelCtrl, NavCtrl, HeaderCtrl, BangHomeCtrl, MemberMainCtrl, SurveyMainCtrl, ActivityMainCtrl)/*invoke*/ {
+define(['angular', 'controllers/main', 'controllers/bang/panel', 'controllers/nav', 'controllers/header', 'controllers/bang/home', 'controllers/member/main', 'controllers/survey/main', 'controllers/activity/main', 'controllers/survey/create', 'controllers/survey/created-by-me', 'controllers/survey/invite-me']/*deps*/, function (angular, MainCtrl, BangPanelCtrl, NavCtrl, HeaderCtrl, BangHomeCtrl, MemberMainCtrl, SurveyMainCtrl, ActivityMainCtrl, SurveyCreateCtrl, SurveyCreatedByMeCtrl, SurveyInviteMeCtrl)/*invoke*/ {
   'use strict';
 
   return angular.module('bangUiApp', ['bangUiApp.controllers.MainCtrl',
@@ -10,6 +10,9 @@ define(['angular', 'controllers/main', 'controllers/bang/panel', 'controllers/na
 'bangUiApp.controllers.MemberMainCtrl',
 'bangUiApp.controllers.SurveyMainCtrl',
 'bangUiApp.controllers.ActivityMainCtrl',
+'bangUiApp.controllers.SurveyCreateCtrl',
+'bangUiApp.controllers.SurveyCreatedByMeCtrl',
+'bangUiApp.controllers.SurveyInviteMeCtrl',
 /*angJSDeps*/
   'ngCookies',
   'ngSanitize',
@@ -61,6 +64,21 @@ define(['angular', 'controllers/main', 'controllers/bang/panel', 'controllers/na
           url: '/survey',
           templateUrl: 'views/survey/main.html',
           controller: 'SurveyMainCtrl'
+        })
+        .state('survey.create', {
+          url: '/create',
+          templateUrl: 'views/survey/create.html',
+          controller: 'SurveyCreateCtrl'
+        })
+        .state('survey.created-by-me', {
+          url: '/created-by-me',
+          templateUrl: 'views/survey/created-by-me.html',
+          controller: 'SurveyCreatedByMeCtrl'
+        })
+        .state('survey.invite-me', {
+          url: '/invite-me',
+          templateUrl: 'views/survey/invite-me.html',
+          controller: 'SurveyInviteMeCtrl'
         })
         .state('activity', {
           url: '/activity',

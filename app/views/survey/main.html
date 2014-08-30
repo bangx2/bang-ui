@@ -5,12 +5,13 @@
 
 <div class="module-nav">
   <ul class="am-nav am-nav-tabs am-nav-justify">
-    <li class="am-active"><a href="#/">首页</a></li>
-    <li><a href="#/">云适配</a></li>
-    <li><a href="#/">加入我们</a></li>
+    <li ui-sref-active="am-active"><a ui-sref="survey.created-by-me">我发起的</a></li>
+    <li ui-sref-active="am-active"><a ui-sref="survey.invite-me">邀请我的</a></li>
+    <li ui-sref-active="am-active"><a ui-sref="survey.create">创建问卷</a></li>
   </ul>
 </div>
 
+<section ui-view>
 <div class="am-g">
   <div class="col-lg-12">
     <h2 class="about-title about-color">Amaze UI 崇尚开放、自由，非常欢迎大家的参与</h2>
@@ -40,3 +41,4 @@
     </div>
   </div>
 </div>
+</section>
