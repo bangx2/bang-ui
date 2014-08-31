@@ -8,8 +8,8 @@ require.config({
     'angular-mocks': '../bower_components/angular-mocks/angular-mocks',
     'angular-cookies': '../bower_components/angular-cookies/angular-cookies',
     angular: '../bower_components/angular/angular',
-    zepto: '../amui/js/zepto.min',
-    amui: '../amui/js/amui',
+    zepto: '../lib/amui/js/zepto.min',
+    amui: '../lib/amui/js/amui',
     underscore: '../bower_components/underscore/underscore',
     'angular-ui-router': '../bower_components/angular-ui-router/release/angular-ui-router',
     'angular-route': '../bower_components/angular-route/angular-route'
