@@ -2,14 +2,14 @@ define(['config', 'angular'], function (config, angular) {
   'use strict';
 
   angular.module('bangUiApp.controllers.BangPanelCtrl', [])
-    .controller('BangPanelCtrl', ['$scope', '$http', function ($scope, $http) {
+    .controller('BangPanelCtrl', ['$scope', '$http', '$cookies', function ($scope, $http, $cookies) {
 
       $http({url: config.api_url + '/bang/my-bangs/', method: 'GET'})
       .success(function (data, status, headers, config) {
         $scope.bangs = data;
-        $scope.selected_bang = $scope.bangs[0];
-        $scope.$emit('SelectedBang', $scope.selected_bang);
       });
+
+      $scope.current_bang = $scope.$parent.current_bang; // parent: ontrallers/main.js -> MainCtrl
 
       $scope.message = 'to create';
 

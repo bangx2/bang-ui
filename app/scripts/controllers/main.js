@@ -3,16 +3,24 @@ define(['config', 'angular'], function (config, angular) {
 
   angular.module('bangUiApp.controllers.MainCtrl', [])
 
-    .controller('MainCtrl', ['$scope', '$http', '$location', function ($scope, $http, $location) {
+    .controller('MainCtrl', ['$scope', '$http', '$cookies', '$location', function ($scope, $http, $cookies, $location) {
       $scope.isSpecificPage = function(){
           var path = $location.path();
           return _.contains(['/login', '/index'], path);
       };
       
+      $http({url: config.api_url + '/bang/default-bang/', method: 'GET'})
+      .success(function (data, status, headers, config) {
+        $scope.current_bang = data;
+        $cookies.bang_id = data['bang_id'];
+      });
+
       $scope.$on('SelectedBang', function (event, msg) {
         $scope.current_bang = msg;
+        $cookies.bang_id = msg['bang_id'];
         $scope.$broadcast('CurrentBang', msg);
       });
+
     }])
 
 

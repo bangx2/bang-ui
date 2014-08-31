@@ -11,7 +11,7 @@ define(['config', 'angular'], function (config, angular) {
       });
 
       var get_members = function () {
-        $http({url: config.api_url + '/bang/bang-members/' + $scope.current_bang.id + '/', method: 'GET'})
+        $http({url: config.api_url + '/bang/bang-members/', method: 'GET'})
         .success(function (data, status, headers, config) {
           $scope.members = data;
           console.log($scope.members);

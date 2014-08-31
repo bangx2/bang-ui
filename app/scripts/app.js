@@ -28,6 +28,9 @@ define(['angular', 'controllers/main', 'controllers/bang/panel', 'controllers/na
           if ($cookies.token) {
             config.headers.Authorization = 'Token ' + $cookies.token;
           }
+          if ($cookies.bang_id) {
+            config.headers['X-Bang-Id'] = $cookies.bang_id;
+          }
           return config;
         },
         responseError: function (response) {
