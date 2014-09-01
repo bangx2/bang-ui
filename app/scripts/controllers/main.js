@@ -25,9 +25,9 @@ define(['config', 'angular'], function (config, angular) {
 
 
     .controller('IndexCtrl', ['$scope', '$http', function ($scope, $http) {
-      $http({url: config.api_url + '/bang/my-bangs/', method: 'GET'})
-      .success(function (data, status, headers, config) {
-      });
+      // $http({url: config.api_url + '/bang/my-bangs/', method: 'GET'})
+      // .success(function (data, status, headers, config) {
+      // });
     }])
 
 
