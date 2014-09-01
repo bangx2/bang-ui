@@ -1,13 +1,88 @@
-<p>This is the survey/create view.</p>
-
 <div class="am-g">
   <div class="col-md-12 col-lg-6">
     <form ng-submit="create()" class="am-form">
+      <fieldset>
 
+        <legend>问卷基本信息</legend>
+
+        <div class="am-form-group">
+          <label for="">问卷名称</label>
+          <input type="text" class="" id="" placeholder="" ng-model="form_content.title">
+        </div>
+        <div class="am-form-group">
+          <label for="">问卷描述</label>
+          <textarea rows="4" class="" id="" placeholder="" ng-model="form_content.description"></textarea>
+        </div>
+
+        <legend>自定义问题</legend>
+
+        <div class="am-panel-group" id="accordion">
+          <div class="am-panel am-panel-default" ng-repeat="element in form_content.elements">
+
+            <div class="am-panel-hd">
+              <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#form_element_{{$index}}'}">
+                问题{{$index+1}}
+              </h4>
+            </div>
+            <div id="form_element_{{$index}}" class="am-panel-collapse am-collapse" ng-class="{'am-in': $last}">
+              <div class="am-panel-bd">
+                <div class="am-form-group">
+                  <label for="">问题标题</label>
+                  <input type="text" class="" id="" placeholder="" ng-model="element.label">
+                </div>
+                <div class="am-form-group">
+                  <label for="">问题类型</label>
+                  <select id="" ng-model="element.type" ng-options="option.value as option.label for option in element_type_options">
+                  </select>
+                  <span class="am-form-caret"></span>
+                </div>
+                <div class="am-form-group">
+                  <label for="">帮助信息</label>
+                  <input type="text" class="" id="" placeholder="" ng-model="element.help_text"></textarea>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <button type="button" class="am-btn am-btn-primary am-btn-block" ng-click="add_element()"><i class="am-icon-plus"></i> 增加自定义问题</button>
+
+      </fieldset>
     </form>
   </div>
+
+
   <div class="col-md-12 col-lg-6">
+
+    <section class="am-panel am-panel-default" id="survey-preview">
+      <header class="am-panel-hd">
+        <h3 class="am-panel-title">问卷预览</h3>
+      </header>
+      <div class="am-panel-bd">
+
+        <h1>{{form_content.title}}</h1>
+        <blockquote ng-if="form_content.description">
+          <p>{{form_content.description}}</p>
+        </blockquote>
+        <form class="am-form" ng-repeat="element in form_content.elements">
+          <div class="am-form-group" ng-if="element.type==0">
+            <label for="">{{element.label||"暂无标题"}}
+            </label>
+            <input type="text" class="" id="" placeholder="{{element.help_text}}">
+          </div>
+          <div class="am-form-group" ng-if="element.type==1">
+            <label for="">{{element.label||"暂无标题"}}</label>
+            <textarea rows="4" class="" id="" placeholder="{{element.help_text}}"></textarea>
+          </div>
+          <div class="am-checkbox" ng-if="element.type==2">
+            <label>
+              <input type="checkbox"> {{element.label||"暂无标题"}}<span ng-if="element.help_text"> ({{element.help_text}})</span>
+            </label>
+          </div>
+        </form>
+
+      </div>
+    </section>
+
   </div>
 </div>
-
-
