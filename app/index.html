@@ -32,14 +32,20 @@
       <header ng-include="'views/header.html'" ng-controller="HeaderCtrl">
       </header>
 
-      <aside id='navigation' ng-include="'views/nav.html'" ng-controller="NavCtrl">
+      <aside id="navigation" ng-include="'views/nav.html'" ng-controller="NavCtrl" class="am-hide-sm-only">
       </aside>
 
       <!-- Add your site or application content here -->
-      <section id='content' ui-view>
+      <section id="content" ui-view class="am-hide-sm-only">
+      </section>
+
+      <section id="content_sm" ui-view class="am-show-sm-only">
       </section>
 
       <section ng-include="'views/bang/panel.html'" ng-controller="BangPanelCtrl">
+      </section>
+
+      <section id="menu_sm" ng-include="'views/menu_sm.html'" ng-controller="NavCtrl" class="am-show-sm-only">
       </section>
     </div>
 

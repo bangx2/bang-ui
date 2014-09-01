@@ -1,21 +1,22 @@
-$logo-size: 100px;
+$logo-size: 300px;
 
 $golden-ratio: 0.618;
 
-$default-bg: blue;
-$default-color: black;
+$default-bg: black;
+$default-color: #fff;
 
+
+
+$big-triangle-width: $logo-size*$golden-ratio;
+$small-triangle-width: $big-triangle-width*$golden-ratio;
 
 .logo-bg {
   width: $logo-size;
   height: $logo-size;
   background-color: $default-bg;
   position: relative;
-  //border-radius: 9px;
+  border-radius: $logo-size*$golden-ratio*$golden-ratio*$golden-ratio*$golden-ratio*$golden-ratio*$golden-ratio*$golden-ratio;
 }
-
-$big-triangle-width: $logo-size*$golden-ratio;
-$small-triangle-width: $big-triangle-width*$golden-ratio;
 
 .big-triangle-up {
   width: 0;
@@ -23,7 +24,8 @@ $small-triangle-width: $big-triangle-width*$golden-ratio;
   border-top: $big-triangle-width*0.5 solid transparent;
   border-bottom: $big-triangle-width*0.5 solid transparent;
   border-left: $big-triangle-width solid $default-color;
-  position: relative;
+  position: absolute;
+  left: $big-triangle-width*$golden-ratio/2;
 }
 
 .small-triangle-up {
@@ -31,9 +33,10 @@ $small-triangle-width: $big-triangle-width*$golden-ratio;
   height: 0;
   border-top: $small-triangle-width*0.5 solid transparent;
   border-bottom: $small-triangle-width*0.5 solid transparent;
-  border-left: $small-triangle-width solid yellow;
-  position: relative;
+  border-left: $small-triangle-width solid $default-bg;
+  position: absolute;
   top: -$small-triangle-width*0.5; 
+  left: -$big-triangle-width + ($big-triangle-width - $small-triangle-width - (($big-triangle-width - $small-triangle-width)*$golden-ratio));
 }
 
 
@@ -45,6 +48,7 @@ $small-triangle-width: $big-triangle-width*$golden-ratio;
   border-left: $big-triangle-width solid $default-color;
   position: absolute;
   bottom: 0;
+  left: $big-triangle-width*$golden-ratio/2;
 }
 
 .small-triangle-down {
@@ -52,7 +56,8 @@ $small-triangle-width: $big-triangle-width*$golden-ratio;
   height: 0;
   border-top: $small-triangle-width*0.5 solid transparent;
   border-bottom: $small-triangle-width*0.5 solid transparent;
-  border-left: $small-triangle-width solid yellow;
+  border-left: $small-triangle-width solid $default-bg;
   position: relative;
   top: -$small-triangle-width*0.5; 
+  left: -$big-triangle-width + ($big-triangle-width - $small-triangle-width - (($big-triangle-width - $small-triangle-width)*$golden-ratio));
 }

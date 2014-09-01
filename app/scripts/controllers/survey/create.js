@@ -27,12 +27,17 @@ define(['angular'], function (angular) {
 
         var scroll_length = $('#content>section').height();
         $('#content').smoothScroll(scroll_length);
-      }
+      };
 
       $scope.remove_element = function (index) {
-        $scope.form_content.splice(index, 1);
-      }
+        $scope.form_content.elements.splice(index, 1);
+      };
     
+      $scope.create = function () {
+        console.log($scope.form_content);
+      };
+
+
       /*
       $timeout(function () {
         $('#survey-preview').scrollspy({
@@ -41,7 +46,5 @@ define(['angular'], function (angular) {
         });
       }, 0);
       */
-      
-
     }]);
 });

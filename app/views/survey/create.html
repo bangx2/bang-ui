@@ -1,5 +1,5 @@
 <div class="am-g">
-  <div class="col-md-12 col-lg-6">
+  <div class="col-md-6">
     <form ng-submit="create()" class="am-form">
       <fieldset>
 
@@ -34,25 +34,26 @@
                   <label for="">问题类型</label>
                   <select id="" ng-model="element.type" ng-options="option.value as option.label for option in element_type_options">
                   </select>
-                  <span class="am-form-caret"></span>
                 </div>
                 <div class="am-form-group">
                   <label for="">帮助信息</label>
                   <input type="text" class="" id="" placeholder="" ng-model="element.help_text"></textarea>
                 </div>
+                <p class="am-text-center"><span class="am-btn am-btn-link" ng-click="remove_element($index)"><i class="am-icon-trash-o am-icon-sm"></i> 删除</span></p>
               </div>
             </div>
 
           </div>
         </div>
         <button type="button" class="am-btn am-btn-primary am-btn-block" ng-click="add_element()"><i class="am-icon-plus"></i> 增加自定义问题</button>
+        <input type="submit" name="" value="提交" class="am-btn am-btn-success am-btn-block">
 
       </fieldset>
     </form>
   </div>
 
 
-  <div class="col-md-12 col-lg-6">
+  <div class="col-md-6">
 
     <section class="am-panel am-panel-default" id="survey-preview">
       <header class="am-panel-hd">

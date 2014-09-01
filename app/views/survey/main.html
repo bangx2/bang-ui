@@ -3,12 +3,18 @@
   <p>AllMobilize Inc (美通云动科技有限公司) 由前微软美国总部IE浏览器核心研发团队成员及移动互联网行业专家在美国西雅图创立，旨在解决网页在不同移动设备屏幕上的适配问题。</p>
 </article>
 
-<div class="module-nav">
+<div class="module-nav am-hide-sm-only">
   <ul class="am-nav am-nav-tabs am-nav-justify">
     <li ui-sref-active="am-active"><a ui-sref="survey.created-by-me">我发起的</a></li>
     <li ui-sref-active="am-active"><a ui-sref="survey.invite-me">邀请我的</a></li>
     <li ui-sref-active="am-active"><a ui-sref="survey.create">创建问卷</a></li>
   </ul>
+</div>
+
+<div class="am-btn-group am-btn-group-justify am-show-sm-only module-nav-sm">
+  <a class="am-btn am-btn-default" ui-sref="survey.created-by-me">我发起的</a>
+  <a class="am-btn am-btn-default" ui-sref="survey.invite-me">邀请我的</a>
+  <a class="am-btn am-btn-default" ui-sref="survey.create">创建问卷</a>
 </div>
 
 <section ui-view>
