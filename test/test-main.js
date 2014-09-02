@@ -21,7 +21,7 @@ requirejs.config({
     'angular-cookies': '../bower_components/angular-cookies/angular-cookies',
     angular: '../bower_components/angular/angular',
     zepto: '../lib/amui/js/zepto.min',
-    amui: '../lib/amui/js/amui',
+    amui: '../lib/amui/js/amui.min',
     underscore: '../bower_components/underscore/underscore',
     'angular-ui-router': '../bower_components/angular-ui-router/release/angular-ui-router',
     'angular-route': '../bower_components/angular-route/angular-route'
