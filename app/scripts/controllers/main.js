@@ -31,21 +31,24 @@ define(['config', 'angular'], function (config, angular) {
     }])
 
 
-    .controller('LoginCtrl', ['$scope', '$http', '$cookies', '$state', function ($scope, $http, $cookies, $state) {
-      // $scope.user = {};
+    .controller('IndexCtrl', ['$scope', '$http', '$cookies', '$state', '$location', '$anchorScroll',
+        function ($scope, $http, $cookies, $state, $location, $anchorScroll) {
+      $scope.scrollTo = function(id) {
+        $location.hash(id);
+        $anchorScroll();
+      }
+
       $scope.login = function () {
         $http
           .post(config.api_url + '/api-token-auth/', $scope.user)
           .success(function (data, status, headers, config) {
             $cookies.token = data.token;
-            $scope.message = 'Welcome';
             $state.go('bang');
           })
           .error(function (data, status, headers, config) {
             // Erase the token if the user fails to log in
             delete $cookies.token;
             // Handle login errors here
-            $scope.message = 'Error: Invalid user or password';
           });
       };
     }]);

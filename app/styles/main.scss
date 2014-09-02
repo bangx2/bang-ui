@@ -1,5 +1,5 @@
-@import "index";
 @import "logo";
+@import "index";
 
 /* variable */
 $golden-ratio: 0.618;
@@ -29,9 +29,39 @@ body {
 }
 
 /* header */
-.am-topbar-brand {
+
+.header-logo {
+  @include bang-logo(40px, #fff, #0e90d2);
+  float: left;
+  padding: 5px 10px;
 }
 
+.header-title {
+  font-size: 35px;
+  color: #fff;
+}
+.header-info {
+  position: relative;
+  height: 50px;
+  margin: 0;
+  padding: 0;
+}
+
+.header-info-version {
+  position: absolute;
+  top: 4px;
+  font-size: 14px;
+}
+.header-info-url {
+  position: absolute;
+  bottom: 4px;
+  color: #fff;
+}
+.bang-btn-sm{
+  position: relative;
+  float: left;
+  margin: 1px 60px 0 10px;
+}
 /* navigation */
 #navigation {
   width: $navigation-width;
@@ -150,7 +180,7 @@ body {
   height: 100%;
   color: #2a2d2e;
   position: relative;
-  margin-bottom: 60px;
+  padding-bottom: 60px;
 }
 
 #menu_sm > div.am-navbar {

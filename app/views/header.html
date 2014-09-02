@@ -1,13 +1,32 @@
 <div class="am-topbar am-topbar-inverse head">
-  <h1 class="am-topbar-brand">
-    <a href="#/">BangBang</a>
-  </h1>
+
+  <a href="" class="am-show-sm-only bang-btn-sm am-animation-shake" data-am-offcanvas="{target: '#bang-panel', effect: 'push'}">
+  <span class="am-icon-btn am-icon-tag"></span>
+  </a>
+
+  <div class="am-topbar-brand">
+    <a href="/">
+    <div class="header-logo">
+      <div class="logo-bg">
+        <div class="big-triangle-up">
+          <div class="small-triangle-up"></div>
+        </div>
+        <div class="big-triangle-down">
+          <div class="small-triangle-down"></div>
+        </div>
+      </div>
+    </div> <span class="header-title">邦邦</span></a>
+  </div>
+  <div class="am-fl header-info am-hide-sm-only">
+    <span class="header-info-version">beta</span>
+    <span class="header-info-url">www.bang<span class="am-text-warning">x2</span>.com</span>
+  </div>
 
   <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-secondary am-show-sm-only" data-am-collapse="{target: '#collapse-head'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
 
   <div class="am-collapse am-topbar-collapse" id="collapse-head">
     <div class="am-topbar-right">
-      <button ui-sref="login" class="am-btn am-btn-primary am-topbar-btn am-btn-sm"><span class="am-icon-sign-out"></span>注销</button>
+      <button ui-sref="index" class="am-btn am-btn-primary am-topbar-btn am-btn-sm"><span class="am-icon-sign-out"></span>退出</button>
     </div>
   </div>
 </div>

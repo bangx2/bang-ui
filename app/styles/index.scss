@@ -1,4 +1,5 @@
 /* index */
+
 .head-fixed {
   padding-top: 50px;
 }
@@ -10,6 +11,45 @@
   left: 0;
   top: 0;
 }
+
+/* header */
+
+.index-header-logo {
+  @include bang-logo(40px, #1E5B94, #fff);
+  float: left;
+  padding: 5px 10px;
+}
+
+.index-header-title {
+  font-size: 35px;
+  color: #1E5B94;
+}
+.index-header-info {
+  position: relative;
+  height: 50px;
+  margin: 0;
+  padding: 0;
+}
+
+.index-header-info-version {
+  position: absolute;
+  top: 4px;
+  font-size: 14px;
+}
+
+.index-header-info-url {
+  position: absolute;
+  bottom: 4px;
+  color: #1E5B94;
+}
+
+
+.banner-logo {
+  @include bang-logo(300px, #fff, #1E5B94);
+  margin:0 auto;
+  width: 300px;
+}
+
 .get {
   background: #1E5B94;
   color: #fff;
@@ -19,7 +59,6 @@
 
 .get-title {
   font-size: 200%;
-  border: 2px solid #fff;
   padding: 20px;
   display: inline-block;
 }
@@ -28,6 +67,7 @@
 }
 .detail {
   background: #fff;
+  padding-top: 50px;
 }
 
 .detail-h2 {
@@ -51,6 +91,7 @@
 .hope {
   background: #0bb59b;
   padding: 50px 0;
+  text-align: center;
 }
 
 .hope-img {

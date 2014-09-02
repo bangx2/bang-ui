@@ -35,7 +35,7 @@ define(['angular', 'controllers/main', 'controllers/bang/panel', 'controllers/na
         },
         responseError: function (response) {
           if (response.status == 401) {
-            $location.path('/login');
+            $location.path('/');
           }
           return $q.reject(response);
         }
@@ -92,12 +92,14 @@ define(['angular', 'controllers/main', 'controllers/bang/panel', 'controllers/na
           url: '/index',
           templateUrl: 'views/index.html',
           controller: 'IndexCtrl'
-        })
+        });
+        /*
         .state('login', {
           url: '/login',
           templateUrl: 'views/login.html',
           controller: 'LoginCtrl'
         });
+        */
 
     }]);
 });

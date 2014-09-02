@@ -1,12 +1,7 @@
-$logo-size: 300px;
+
+@mixin bang-logo($logo-size, $default-bg, $default-color) {
 
 $golden-ratio: 0.618;
-
-$default-bg: black;
-$default-color: #fff;
-
-
-
 $big-triangle-width: $logo-size*$golden-ratio;
 $small-triangle-width: $big-triangle-width*$golden-ratio;
 
@@ -61,3 +56,7 @@ $small-triangle-width: $big-triangle-width*$golden-ratio;
   top: -$small-triangle-width*0.5; 
   left: -$big-triangle-width + ($big-triangle-width - $small-triangle-width - (($big-triangle-width - $small-triangle-width)*$golden-ratio));
 }
+}
+
+
+
