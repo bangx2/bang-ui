@@ -1,16 +1,35 @@
 <article class="module-description am-hide-sm-down">
   <h2>成员</h2>
-  <p>AllMobilize Inc (美通云动科技有限公司) 由前微软美国总部IE浏览器核心研发团队成员及移动互联网行业专家在美国西雅图创立，旨在解决网页在不同移动设备屏幕上的适配问题。</p>
+  <p>邦内的成员，应是您的同一个圈子的人。比如公司的同事，大学的同学等。</p>
+  <p>只有邦的创建者，才可以邀请新人。也只有邦的创建者，才可以移除相应成员。</p>
 </article>
 
 <div class="am-g">
   <div class="col-lg-12">
-    <h2 class="about-title about-color">{{current_bang.name}}</h2>
-    <div class="am-g">
-      <div class="col-lg-6 col-md-4 col-sm-12">
-        <p ng-repeat="member in members">
-          {{member.username}} - {{member.email}} - {{member.alias}}
-        </p>
+    <div class="am-padding">
+      <div class="am-margin-bottom">
+        <button type="button" class="am-btn am-btn-success">邀请新人</button>
+      </div>
+      <table class="am-table am-table-bd am-table-bd am-table-striped am-table-hover">
+        <tr>
+          <th>姓名</th>
+          <th>邮箱</th>
+          <th>加入时间</th>
+          <th>操作</th>
+        </tr>
+        <tr>
+          <td>德琨 <span class="am-text-sm am-text-secondary">(demo数据)</span></td>
+          <td>deggs.k@gmail.com</td>
+          <td><a class="am-badge am-badge-warning">邀请中</a></td>
+          <td><button type="button" class="am-btn am-btn-danger">从邦中移除</button></td>
+        </tr>
+        <tr ng-repeat="member in members">
+          <td>{{member.alias}}</td>
+          <td>{{member.email}}</td>
+          <td>2014-09-01</td>
+          <td><button type="button" class="am-btn am-btn-danger">从邦中移除</button></td>
+        </tr>
+      </table>
     </div>
   </div>
 </div>

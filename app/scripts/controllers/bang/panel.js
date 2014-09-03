@@ -2,16 +2,20 @@ define(['config', 'angular'], function (config, angular) {
   'use strict';
 
   angular.module('bangUiApp.controllers.BangPanelCtrl', [])
-    .controller('BangPanelCtrl', ['$scope', '$http', '$cookies', function ($scope, $http, $cookies) {
+    .controller('BangPanelCtrl', ['$scope', '$http', '$cookies', '$state', function ($scope, $http, $cookies, $state) {
 
-      $http({url: config.api_url + '/bang/my-bangs/', method: 'GET'})
-      .success(function (data, status, headers, config) {
-        $scope.bangs = data;
-      });
+      var init_bangs = function () {
+        $http({url: config.api_url + '/bang/my-bangs/', method: 'GET'})
+        .success(function (data, status, headers, config) {
+          $scope.bangs = data;
+        });
+      };
+
+      init_bangs();
 
       $scope.current_bang = $scope.$parent.current_bang; // parent: ontrallers/main.js -> MainCtrl
 
-      $scope.message = 'to create';
+      $scope.message = '';
 
       $scope.bang = {};
       $scope.create = function () {
@@ -22,7 +26,8 @@ define(['config', 'angular'], function (config, angular) {
           headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         })
         .success(function (data, status, headers, config) {
-          $scope.message = $scope.bang.name + ' 创建成功';
+          $('#create-bang-modal').modal('close');
+          init_bangs();
         })
         .error(function (data, status, headers, config) {
           // Handle errors here
@@ -33,6 +38,9 @@ define(['config', 'angular'], function (config, angular) {
       $scope.select_bang = function (bang) {
         $scope.selected_bang = bang;
         $scope.$emit('SelectedBang', $scope.selected_bang);
+        $state.go('bang');
+        $('#bang-panel').offCanvas('close');
+        init_bangs();
       };
 
 

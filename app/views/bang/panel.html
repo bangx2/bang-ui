@@ -24,20 +24,26 @@
     </div>
     <div class="am-popup-bd">
       <form ng-submit="create()" class="am-form">
-        <label for="name">邦名称</label>
+        <label for="name">邦的名称</label>
         <input ng-model="bang.name" type="text" name="name" id="name" required/>
         <br>
+        <label for="description">邦的描述</label>
+        <textarea rows="4" ng-model="bang.description" name="description" id="description" required></textarea>
+        <br>
+        <!--
         <label for="bang.can_invite">
           <input id="can_invite" type="checkbox">
           邦内成员都可以邀请其他人
         </label>
-        <br />
+        <br>
+        -->
+        <div class="am-text-danger am-text-lg am-text-center">
+          {{message}}
+        </div>
         <div class="">
           <input type="submit" name="" value="创建" class="am-btn am-btn-primary am-btn-sm am-btn-block"></input>
         </div>
       </form>
-      {{message}}
-      {{bang.name}}
     </div>
   </div>
 </div>
