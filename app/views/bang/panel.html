@@ -2,14 +2,13 @@
 <div id="bang-panel" class="am-offcanvas">
   <div class="am-offcanvas-bar">
     <div class="am-offcanvas-content">
-      <div class="bang-panel-logo" ng-repeat="bang in bangs" ng-click="select_bang(bang)">
-        <!--
-        <img src="http://amazeui.org/i/landing/mascot.png" alt="{{bang.name}}" class="am-img-bdrs">
-        -->
-        <span class="bang-logo-title">{{bang.name}}</span>
+      <!-- 邦logo-->
+      <div class="panel-bang-logo" ng-repeat="bang in bangs" ng-click="select_bang(bang)">
+        <span class="bang-logo-desc">默认图标</span>
+        <div class="am-text-truncate bang-logo-title">{{bang.name}}</div>
       </div>
       <div class="bang-new-btn">
-        <button class="am-btn am-btn-primary am-btn-block" data-am-modal="{target: '#create-bang-modal'}"><i class="am-icon-plus"></i></button>
+        <button class="am-btn am-btn-primary am-btn-block" data-am-modal="{target: '#create-bang-modal'}"><i class="am-icon-plus"></i> 创建新的邦</button>
       </div>
     </div>
   </div>

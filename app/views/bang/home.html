@@ -1,33 +1,108 @@
 <article class="module-description am-hide-sm-down">
-  <h2>邦</h2>
-  <p>在一起，只因共同的理想！</p>
+  <h2>邦 —— 在一起，只因共同的理想！</h2>
+  <p>邦汇聚了志同道合的一群人，可以是整个公司，或是一个团队。由你创建的邦，就由你决定邦的规则。点击左侧邦图标，管理更多邦。</p>
 </article>
 
 <div class="am-g">
-  <div class="col-lg-12">
-    <h2 class="about-title about-color">{{current_bang.name}}</h2>
+  <div class="col-md-12">
     <div class="am-g">
-      <div class="col-lg-6 col-md-4 col-sm-12">
-        <form class="am-form">
-          <label for="name" class="about-color">你的姓名</label>
-          <input id="name" type="text">
-          <br/>
-          <label for="email" class="about-color">你的邮箱</label>
-          <input id="email" type="email">
-          <br/>
-          <label for="message" class="about-color">你的留言</label>
-          <textarea id="message"></textarea>
-          <br/>
-          <button type="submit" class="am-btn am-btn-primary am-btn-sm"><i class="am-icon-check"></i> 提  交  </button>
-        </form>
-        <hr class="am-article-divider am-show-sm-only">
+      <div class="col-md-6 col-sm-12">
+
+        <h1 class="am-text-xxl am-margin-top">{{current_bang.name}}
+        <button class="am-btn am-btn-primary am-btn-sm am-margin-top-sm am-fr">
+          <i class="am-icon-gear"></i>
+        </button>
+        </h1>
+        <blockquote ng-if="current_bang.description">
+          <p>{{current_bang.description}}</p>
+        </blockquote>
+
+        <hr class="am-article-divider">
+
+        <ul class="sm-block-grid-2">
+          <li><h1 class="am-text-secondary">成员数量: 20</h1></li>
+          <li><h1 class="am-text-secondary">问卷数量: 3</h1></li>
+        </ul>
+
       </div>
 
-      <div class="col-lg-6 col-md-8 col-sm-12">
-        <h4 class="about-color">关于我们</h4>
-        <p>AllMobilize Inc (美通云动科技有限公司) 由前微软美国总部IE浏览器核心研发团队成员及移动互联网行业专家在美国西雅图创立，旨在解决网页在不同移动设备屏幕上的适配问题。基于国际专利技术并结合最前沿的HTML5技术，云适配解决方案可以帮助企业快速将桌面版网站适配到各种移动设备终端的屏幕上，不仅显著地提高了企业网站的用户体验以及销售转化率，而且大幅度地节省了企业开发和维护移动网站的费用。</p>
-        <h4 class="about-color">团队介绍</h4>
-        <p>AllMobilize Inc 获得了微软创投孵化器的支持，其领先科技已得到全球多家企业及机构的认可与信赖，客户包括全球500强企业、美国政府、国内政府机关、国内外上市公司、以及互联网标准化组织W3C。</p>
+      <div class="col-md-6 col-sm-12">
+
+        <h2 class="am-margin-top">邦通知</h2>
+        <ul>
+          <li>中秋放假通知</li>
+          <li>近期公司将开展员工满意度调查</li>
+          <li>9月零食已满仓</li>
+          <li>wifi连接信息变更</li>
+          <li>新员工卡照片提交</li>
+        </ul>
+
+      </div>
+    </div>
+    <div class="am-g">
+      <div class="col-md-6 col-sm-12">
+        <h2>公开问卷</h2>
+        <table class="am-table am-table-bd am-table-bdrs am-table-striped">
+          <tr>
+            <th>问卷名称</th>
+            <th>截止时间</th>
+            <th>参与人数</th>
+          </tr>
+          <tr>
+            <td>中秋月饼寄送地址统计</td>
+            <td>2014-09-10</td>
+            <td>100</td>
+          </tr>
+          <tr>
+            <td>员工身份证统计</td>
+            <td>2012-10-01</td>
+            <td>200</td>
+          </tr>
+          <tr>
+            <td>团建活动建议征集</td>
+            <td>2014-09-20</td>
+            <td>150</td>
+          </tr>
+          <tr>
+            <td>10月办公用品采购申请</td>
+            <td>已截止</td>
+            <td>99</td>
+          </tr>
+          <tr>
+            <td>公司咖啡吧9月打分</td>
+            <td>已截止</td>
+            <td>160</td>
+          </tr>
+        </table>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <h2>最新加入</h2>
+        <table class="am-table am-table-bd am-table-bdrs am-table-striped">
+          <tr>
+            <th>成员名字</th>
+            <th>加入时间</th>
+          </tr>
+          <tr>
+            <td>张三</td>
+            <td>2014-09-01</td>
+          </tr>
+          <tr>
+            <td>李四</td>
+            <td>2012-10-01</td>
+          </tr>
+          <tr>
+            <td>王五</td>
+            <td>2014-09-01</td>
+          </tr>
+          <tr>
+            <td>赵六</td>
+            <td>2014-09-01</td>
+          </tr>
+          <tr>
+            <td>孙七</td>
+            <td>2012-10-01</td>
+          </tr>
+        </table>
       </div>
     </div>
   </div>

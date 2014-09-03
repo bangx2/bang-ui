@@ -16,7 +16,7 @@
 /* header */
 
 .index-header-logo {
-  @include bang-logo(40px, #1E5B94, #fff);
+  @include bangx2-logo(40px, #1E5B94, #fff);
   float: left;
   padding: 5px 10px;
 }
@@ -46,7 +46,7 @@
 
 
 .banner-logo {
-  @include bang-logo(300px, #fff, #1E5B94);
+  @include bangx2-logo(300px, #fff, #1E5B94);
   margin:0 auto;
   width: 300px;
 }

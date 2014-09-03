@@ -31,7 +31,7 @@ body {
 /* header */
 
 .header-logo {
-  @include bang-logo(40px, #fff, #0e90d2);
+  @include bangx2-logo(40px, #fff, #0e90d2);
   float: left;
   padding: 5px 10px;
 }
@@ -63,6 +63,37 @@ body {
   margin: 1px 60px 0 10px;
 }
 /* navigation */
+
+@mixin bang-logo {
+  width: $logo-width;
+  height: $logo-height;
+  margin: 30px auto 60px;
+  border: 2px solid #0b76ac;
+  border-radius: 5px;
+  position: relative;
+  cursor: pointer;
+  background-image: url('http://amazeui.org/i/landing/mascot.png');
+  background-size: $logo-width $logo-height;
+  background-color: #fff;
+  .bang-logo-desc {
+    font-size: 14px;
+    color: #0b76ac;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    border: 1px solid #0b76ac;
+    border-radius: 2px;
+  }
+  .bang-logo-title {
+    font-size: 24px;
+    color: #333;
+    position: absolute;
+    bottom: -35px;
+    text-align: center;
+    width: 100%;
+  }
+}
+
 #navigation {
   width: $navigation-width;
   height: 100%;
@@ -71,25 +102,8 @@ body {
   border-right: 4px solid #eee;
   background: #fff;
 
-  .bang-logo {
-    width: $logo-width;
-    height: $logo-height;
-    margin: 30px auto;
-    border: 2px solid #0b76ac;
-    border-radius: 5px;
-    position: relative;
-    cursor: pointer;
-    span.bang-logo-title {
-      font-size: 24px;
-      color: #333;
-      position: absolute;
-      top: 20px;
-    }
-    img {
-    }
-    i {
-      text-align: center;
-    }
+  .navigation-bang-logo {
+    @include bang-logo();
   }
 
   .am-nav > li {
@@ -139,23 +153,8 @@ body {
   background: #0b76ac;
 }
 
-.bang-panel-logo {
-    width: $logo-width;
-    height: $logo-height;
-    margin: 30px auto;
-    border: 2px solid #fff;
-    border-radius: 5px;
-    background: #fff;
-    position: relative;
-    cursor: pointer;
-    span.bang-logo-title {
-      font-size: 24px;
-      color: #333;
-      position: absolute;
-      top: 20px;
-    }
-    img {
-    }
+.panel-bang-logo {
+    @include bang-logo();
 }
 
 .bang-new-btn {
@@ -185,6 +184,11 @@ body {
 
 #menu_sm > div.am-navbar {
   z-index: 1032;
+}
+
+/* bang-home */
+.bang-home-title {
+  margin-top: 30px;
 }
 
 /* module-page */
