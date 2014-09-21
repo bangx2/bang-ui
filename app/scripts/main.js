@@ -8,11 +8,11 @@ require.config({
     'angular-mocks': '../bower_components/angular-mocks/angular-mocks',
     'angular-cookies': '../bower_components/angular-cookies/angular-cookies',
     angular: '../bower_components/angular/angular',
-    zepto: '../lib/amui/js/zepto.min',
-    amui: '../lib/amui/js/amui.min',
     underscore: '../bower_components/underscore/underscore',
     'angular-ui-router': '../bower_components/angular-ui-router/release/angular-ui-router',
-    'angular-route': '../bower_components/angular-route/angular-route'
+    'angular-route': '../bower_components/angular-route/angular-route',
+    foundation: '../bower_components/foundation/js/foundation',
+    'angular-foundation-bower': '../bower_components/angular-foundation-bower/mm-foundation-tpls'
   },
   shim: {
     angular: {
@@ -32,16 +32,7 @@ require.config({
     },
     'angular-ui-router': [
       'angular'
-    ],
-    zepto: {
-      exports: 'zepto'
-    },
-    amui: {
-      deps: [
-        'zepto'
-      ],
-      exports: 'amui'
-    }
+    ]
   },
   priority: [
     'angular'
@@ -55,7 +46,6 @@ require([
   'config',
   'angular',
   'app',
-  'amui',
   // 'angular-route',
   'angular-cookies',
   'angular-sanitize',
